@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.author       = "Joon Ho Cho"
   s.source       = { :git => "https://github.com/joonhocho/react-native-mail-compose.git" }
   s.source_files = 'ios/**/*.{h,m,swift}'
-  s.platform     = :ios, "8.0"
-  s.dependency 'React/Core'
+  s.platform     = :ios, "12.0"
+  s.dependency 'React-Core'
 end
