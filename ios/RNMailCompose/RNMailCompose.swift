@@ -48,8 +48,9 @@ class RNMailCompose: NSObject, MFMailComposeViewControllerDelegate {
     //   reject("cannotSendMail", "Cannot send mail", nil)
     //   return
     // }
+    DispatchQueue.main.async {
+      let vc = MFMailComposeViewController()
     
-    let vc = MFMailComposeViewController()
     
     if let value = data["subject"] as? String {
       vc.setSubject(value)
@@ -85,6 +86,7 @@ class RNMailCompose: NSObject, MFMailComposeViewControllerDelegate {
       self.reject = reject
     } else {
       reject("failed", "Could not present view controller", nil)
+    }
     }
   }
   
