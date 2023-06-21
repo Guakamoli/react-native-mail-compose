@@ -43,10 +43,11 @@ class RNMailCompose: NSObject, MFMailComposeViewControllerDelegate {
   }
   
   @objc func send(_ data: [String: Any], resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
-    if !MFMailComposeViewController.canSendMail() {
-      reject("cannotSendMail", "Cannot send mail", nil)
-      return
-    }
+    // check by yourself
+    // if !MFMailComposeViewController.canSendMail() {
+    //   reject("cannotSendMail", "Cannot send mail", nil)
+    //   return
+    // }
     
     let vc = MFMailComposeViewController()
     
@@ -129,7 +130,9 @@ class RNMailCompose: NSObject, MFMailComposeViewControllerDelegate {
   
   func present(viewController: UIViewController) -> Bool {
     if let topVc = getTopViewController(window: UIApplication.shared.keyWindow) {
-      topVc.present(viewController, animated: true, completion: nil)
+      DispatchQueue.main.async {
+        topVc.present(viewController, animated: true, completion: nil)
+      }
       return true
     }
     return false
