@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "react-native-mail-compose"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "React Native library for composing email. Wraps MFMailComposeViewController for iOS and Intent for Android."
   s.requires_arc = true
   s.license      = 'MIT'
