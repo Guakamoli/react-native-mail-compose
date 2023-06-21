@@ -104,6 +104,8 @@ class RNMailCompose: NSObject, MFMailComposeViewControllerDelegate {
         case .failed:
             reject?("failed", "Operation has failed", nil)
             break
+        @unknown default:
+            break
         }
         resolve = nil
         reject = nil
